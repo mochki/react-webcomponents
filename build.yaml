@@ -1,0 +1,12 @@
+name: react-webcomponents
+targets:
+- !yarn
+  name: react-webcomponents
+  type: yarn
+  variables:
+  - PORTFOLIOS_URL:$(Config.treatyiq.PORTFOLIOS_URL)
+  outputs:
+  - !docker-repository
+    type: docker
+    images:
+    - react-webcomponents
