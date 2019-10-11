@@ -1,6 +1,6 @@
 {
   "name": "@rms/react-webcomponents",
-  "version": "1.1.1",
+  "version": "1.3.1",
   "description": "React HOC & generator to wrap webcomponents as a React component with full compatibility.",
   "author": "Radius UI <radius@RMS.com> (https://github.com/RMS)",
   "repository": "git://github.com/RMS/react-webcomponents.git",
@@ -10,15 +10,17 @@
     "lib"
   ],
   "scripts": {
-    "build": "npm-run-all build:js build:types",
-    "build:js": "babel src --out-dir lib --extensions \".ts\" --source-maps inline",
+    "build": "npm-run-all build:types build:js",
+    "build:js": "npx rollup --config",
     "build:types": "tsc --emitDeclarationOnly",
     "fix": "npm-run-all fix:tslint fix:prettier",
     "fix:tslint": "tslint -p tsconfig.json -c tslint.json --fix 'src/**/*.ts?(x)'",
     "fix:prettier": "prettier --write '**/*.ts?(x)' --ignore-path .gitignore",
     "lint": "npm-run-all lint:ts lint:prettier",
     "lint:prettier": "prettier --check '**/*.ts?(x)' --ignore-path .gitignore",
-    "lint:ts": "tslint -p tsconfig.json -c tslint.json 'src/**/*.ts?(x)'"
+    "lint:ts": "tslint -p tsconfig.json -c tslint.json 'src/**/*.ts?(x)'",
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "peerDependencies": {
     "react": "^16.8.0"
@@ -28,13 +30,25 @@
     "@babel/core": "^7.5.5",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.6.0",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.3.3",
-    "@types/react": "^16.8.23",
+    "@testing-library/jest-dom": "^4.1.0",
+    "@testing-library/react": "^9.1.4",
+    "@types/jest": "^24.0.18",
+    "@types/react": "^16.9.2",
+    "document-register-element": "^1.14.3",
+    "jest": "^24.9.0",
+    "mutationobserver-shim": "^0.3.3",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.18.2",
-    "react": "^16.8.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "rollup": "^1.21.4",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
     "tslint": "^5.18.0",
     "typescript": "^3.5.3"
   },
@@ -48,5 +62,13 @@
     "primitive",
     "typescript"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "jest": {
+    "verbose": true,
+    "setupFilesAfterEnv": [
+      "<rootDir>/node_modules/mutationobserver-shim/dist/mutationobserver.min.js",
+      "<rootDir>/node_modules/document-register-element/build/document-register-element.js"
+    ],
+    "coveragePathIgnorePatterns": ["./testing"]
+  }
 }

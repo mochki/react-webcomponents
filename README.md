@@ -66,6 +66,13 @@ This includes:
       'on-custom-drag': 'actualcustomdragvent'
     }
     ```
+  - `customProps` - an object containing keys to what will be defined as a component
+    prop in JSX and the actual attribute that will be passed to the DOM element in HTML. i.e.
+    ```js
+    {
+      primaryColor: 'primary-color'
+    }
+    ```
   - `displayName` - A custom display name we pass into `connectReact` so the DevTool
     will properly show named components. Will default to web-component name if provided.
   - `eventTransformer` - A function that takes in the event name (`string`) used as a prop in JSX

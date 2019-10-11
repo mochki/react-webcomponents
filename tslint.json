@@ -3,6 +3,7 @@
   "extends": ["tslint:recommended"],
   "rules": {
     "await-promise": true,
+    "max-classes-per-file": false,
     "member-access": [true, "no-public"],
     "no-async-without-await": true,
     "no-floating-promises": true,
@@ -19,7 +20,7 @@
     },
     "prefer-object-spread": true,
     "quotemark": [true, "single", "jsx-double", "avoid-escape", "avoid-template"],
-    "semicolon": [true, "always"],
+    "semicolon": [true, "always", "ignore-bound-class-methods"],
     "trailing-comma": {
       "options": {
         "multiline": {
