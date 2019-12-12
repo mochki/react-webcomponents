@@ -3,9 +3,16 @@
   "version": "1.3.1",
   "description": "React HOC & generator to wrap webcomponents as a React component with full compatibility.",
   "author": "Radius UI <radius@RMS.com> (https://github.com/RMS)",
-  "repository": "git://github.com/RMS/react-webcomponents.git",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/rms/radius-ui-new.git",
+    "directory": "react-webcomponents"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "files": [
     "lib"
   ],
@@ -49,6 +56,8 @@
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
+    "semantic-release": "^15.13.31",
+    "semantic-release-monorepo": "^6.1.1",
     "tslint": "^5.18.0",
     "typescript": "^3.5.3"
   },
@@ -69,6 +78,8 @@
       "<rootDir>/node_modules/mutationobserver-shim/dist/mutationobserver.min.js",
       "<rootDir>/node_modules/document-register-element/build/document-register-element.js"
     ],
-    "coveragePathIgnorePatterns": ["./testing"]
+    "coveragePathIgnorePatterns": [
+      "./testing"
+    ]
   }
 }
