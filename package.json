@@ -1,6 +1,6 @@
 {
   "name": "@rms/react-webcomponents",
-  "version": "1.3.2",
+  "version": "1.3.1",
   "description": "React HOC & generator to wrap webcomponents as a React component with full compatibility.",
   "author": "Radius UI <radius@RMS.com> (https://github.com/RMS)",
   "main": "lib/index.js",
