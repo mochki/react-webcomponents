@@ -1,5 +1,6 @@
 # React Webcomponents
 
+
 > React HOC & generator to wrap webcomponents as a React component with full compatibility.
 
 ## Usage
@@ -86,7 +87,7 @@ This includes:
     ```
 
 Parsing of event names thus follows this heirarchy, returning the first value that matches the case:
-  1. `Events listed in the customEvents map` 
+  1. `Events listed in the customEvents map`
   1. `Events transformed by a given transformer`
   1. `Events listed as special because of React's native incompatibility`
   1. `defaulting to remove an 'on' at the beginning and lowercasing`
